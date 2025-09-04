@@ -8,29 +8,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="index.html" class="logo">
-                <img src="images/draplogo.jpg" alt="Drap Concept Store Logo">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="shopwomen.html">women</a></li>
-                <li><a href="shopmen.html">men</a></li>
-                <li><a href="#">articles</a></li>
-                <li><a href="location.html" class="active">location</a></li>
-            </ul>
-            <div class="header-right">
-                <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Search">
-                </div>
-                <ul class="header-links">
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Cart</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div id="navbar-container"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -133,7 +111,7 @@
                     </p>
                     <div class="visit-cta">
                         <a href="shopwomen.html" class="btn btn-primary">Shop Women's</a>
-                        <a href="shopmen.html" class="btn btn-primary">Shop Men's</a>
+                        <a href="shopjewerly.html" class="btn btn-primary">Shop Jewelry</a>
                     </div>
                 </div>
                 <div class="visit-image">
@@ -147,6 +125,14 @@
     <div id="footer-container"></div>
 
     <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
         // Load footer
         fetch('footer.html')
             .then(response => response.text())
@@ -155,16 +141,6 @@
             })
             .catch(error => console.error('Error loading footer:', error));
 
-        // Search functionality
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const searchTerm = this.value.trim();
-                if (searchTerm) {
-                    alert(`Searching for: ${searchTerm}`);
-                    this.value = '';
-                }
-            }
-        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

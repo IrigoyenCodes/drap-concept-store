@@ -33,32 +33,45 @@
 
             <!-- Men's Panel -->
             <div class="category-panel">
-                <a href="shopmen.html">
-                    <img src="images\shopmen.jpg" 
+                <a href="Wcollection25.html">
+                    <img src="images\wintern collection.jpg" 
                          alt="Men's Fashion" class="panel-image">
                     <div class="panel-overlay">
+                        <div class="panel-subtitle">winter 25'</div>
+                        <div class="panel-title">COLLECTION</div>
+                    </div>
+                </a>
+            </div>     
+            
+
+            <!-- jewerly Panel -->
+            <div class="category-panel">
+                <a href="shopjewerly.html">
+                    <img src="images\jewerly.jpeg" 
+                         alt="Articles Collection" class="panel-image">
+                    <div class="panel-overlay">
                         <div class="panel-subtitle">Shop</div>
-                        <div class="panel-title">Men</div>
+                        <div class="panel-title">jewelry</div>
                     </div>
                 </a>
             </div>
-
-            <!-- Shoes Panel -->
-            <div class="category-panel">
-                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                     alt="Articles Collection" class="panel-image">
-                <div class="panel-overlay">
-                    <div class="panel-subtitle">Shop</div>
-                    <div class="panel-title">Articles</div>
-                </div>
-            </div>
         </div>
     </main>
+
+    
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
     <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
         // Load footer
         fetch('footer.html')
             .then(response => response.text())
@@ -78,16 +91,6 @@
             });
         });
 
-        // Search functionality
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const searchTerm = this.value.trim();
-                if (searchTerm) {
-                    alert(`Searching for: ${searchTerm}`);
-                    this.value = '';
-                }
-            }
-        });
     </script>
 </body>
 </html>

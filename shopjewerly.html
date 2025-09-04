@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Collection - Drap Concept Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">Our jewelry</h1>
+            <p class="page-subtitle">Discover our curated selection of premium jewelry. From elegant necklaces to sophisticated rings, find pieces that define your style.</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-group">
+                <span class="filter-label">Category:</span>
+                <select class="filter-select">
+                    <option>All Items</option>
+                    <option>Necklaces</option>
+                    <option>Rings</option>
+                    <option>Earrings</option>
+                    <option>Bracelets</option>
+                    <option>Watches</option>
+                </select>
+                
+                <span class="filter-label">Material:</span>
+                <select class="filter-select">
+                    <option>All Materials</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Platinum</option>
+                    <option>Diamond</option>
+                    <option>Pearl</option>
+                </select>
+                
+                <span class="filter-label">Price:</span>
+                <select class="filter-select">
+                    <option>All Prices</option>
+                    <option>Under $100</option>
+                    <option>$100 - $500</option>
+                    <option>$500 - $1000</option>
+                    <option>Over $1000</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-container">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="images\jewerly.jpeg" 
+                         alt="Elegant Necklace" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">necklaces</div>
+                        <h3 class="product-name">gold chain necklace</h3>
+                        <div class="product-price">$299</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                            <button class="btn btn-secondary">Quick View</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="images\jewerly.jpeg" 
+                         alt="Diamond Ring" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">rings</div>
+                        <h3 class="product-name">diamond solitaire</h3>
+                        <div class="product-price">$899</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                            <button class="btn btn-secondary">Quick View</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="images\jewerly.jpeg" 
+                         alt="Pearl Earrings" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">earrings</div>
+                        <h3 class="product-name">pearl studs</h3>
+                        <div class="product-price">$199</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                            <button class="btn btn-secondary">Quick View</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="images\jewerly.jpeg" 
+                         alt="Luxury Watch" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">watches</div>
+                        <h3 class="product-name">luxury timepiece</h3>
+                        <div class="product-price">$1299</div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">Add to Cart</button>
+                            <button class="btn btn-secondary">Quick View</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Product card hover effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                alert(`Added "${productName}" to cart!`);
+            });
+        });
+
+        // Quick view functionality
+        document.querySelectorAll('.btn-secondary').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                alert(`Quick view: "${productName}"`);
+            });
+        });
+
+    </script>
+</body>
+</html>

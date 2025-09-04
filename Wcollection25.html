@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Collection 25' - Drap Concept Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="winter-collection-main-content">
+        <div class="winter-collection-page-header">
+            <h1 class="winter-collection-page-title">Winter Collection 25'</h1>
+            <p class="winter-collection-page-subtitle">Discover our exclusive winter collection featuring premium pieces designed for the modern lifestyle.</p>
+        </div>
+
+        <!-- Collection Content -->
+        <div class="winter-collection-container">
+            <!-- Hero Section -->
+            <div class="winter-collection-hero-section">
+                <div class="winter-collection-hero-image">
+                    <div class="winter-collection-hero-overlay">
+                        <h2>Winter Collection 25'</h2>
+                        <p>Discover the latest trends for the season</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collection Grid -->
+            <div class="winter-collection-grid">
+                <!-- Large Featured Item -->
+                <div class="winter-collection-item winter-collection-large">
+                    <img src="images/wintern collection.jpg" alt="Winter Collection Featured">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Featured Collection</h3>
+                        <p>Premium winter essentials crafted for the modern wardrobe</p>
+                    </div>
+                </div>
+
+                <!-- Medium Items -->
+                <div class="winter-collection-item winter-collection-medium">
+                    <img src="images/shopwomen.jpg" alt="Accessories">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Accessories</h3>
+                        <p>Complete your look with curated pieces</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item winter-collection-medium">
+                    <img src="images/shopmen.jpg" alt="Outerwear">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Outerwear</h3>
+                        <p>Stay warm in contemporary style</p>
+                    </div>
+                </div>
+
+                <!-- Small Items -->
+                <div class="winter-collection-item winter-collection-small">
+                    <img src="images/womenbeige.jpg" alt="Basics">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Basics</h3>
+                        <p>Essential pieces for every wardrobe</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item winter-collection-small">
+                    <img src="images/womenwhite.jpg" alt="Footwear">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Footwear</h3>
+                        <p>Step into the season with confidence</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item winter-collection-small">
+                    <img src="images/womenleopard.jpg" alt="Knitwear">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Knitwear</h3>
+                        <p>Luxurious textures for cold days</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item winter-collection-small">
+                    <img src="images/menjeans.jpg" alt="Denim">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Denim</h3>
+                        <p>Timeless pieces reimagined</p>
+                    </div>
+                </div>
+
+                <!-- Additional Items for fuller grid -->
+                <div class="winter-collection-item">
+                    <img src="images/menpolo.jpg" alt="Tailoring">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Tailoring</h3>
+                        <p>Precision cut for the perfect fit</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item">
+                    <img src="images/menretro.jpg" alt="Eveningwear">
+                    <div class="winter-collection-item-overlay">
+                        <h3>Eveningwear</h3>
+                        <p>Sophisticated pieces for special occasions</p>
+                    </div>
+                </div>
+
+                <div class="winter-collection-item">
+                    <img src="images/menwinbreaker.jpg" alt="New Arrivals">
+                    <div class="winter-collection-item-overlay">
+                        <h3>New Arrivals</h3>
+                        <p>Fresh additions to your wardrobe</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collection Info -->
+            <div class="winter-collection-info">
+                <h2>About</h2>
+                <p>Our latest winter collection combines contemporary design with timeless elegance. Each piece is carefully crafted to provide both comfort and style for the modern lifestyle, featuring premium materials and attention to detail that defines luxury fashion.</p>
+                <div class="winter-collection-stats">
+                    <div class="winter-collection-stat">
+                        <span class="winter-collection-stat-number">50+</span>
+                        <span class="winter-collection-stat-label">New Pieces</span>
+                    </div>
+                    <div class="winter-collection-stat">
+                        <span class="winter-collection-stat-number">8</span>
+                        <span class="winter-collection-stat-label">Collections</span>
+                    </div>
+                    <div class="winter-collection-stat">
+                        <span class="winter-collection-stat-number">100%</span>
+                        <span class="winter-collection-stat-label">Premium Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
