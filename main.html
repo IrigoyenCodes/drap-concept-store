@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drap Concept Store - Fashion Categories</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="brand-title">drap</h1>
+        <div class="brand-subtitle">concept store</div>
+
+        
+        <!-- Category Panels -->
+
+        <div class="category-panels">
+            <!-- Women's Panel -->
+            <div class="category-panel">
+                <a href="shopwomen.html">
+                <img src="images\shopwomen.jpg" 
+                     alt="Women's Fashion" class="panel-image">
+                <div class="panel-overlay">
+                    <div class="panel-subtitle">Shop</div>
+                    <div class="panel-title">Women</div>
+                </div>
+            </a>
+        </div>
+
+            <!-- Men's Panel -->
+            <div class="category-panel">
+                <a href="shopmen.html">
+                    <img src="images\shopmen.jpg" 
+                         alt="Men's Fashion" class="panel-image">
+                    <div class="panel-overlay">
+                        <div class="panel-subtitle">Shop</div>
+                        <div class="panel-title">Men</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Shoes Panel -->
+            <div class="category-panel">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Articles Collection" class="panel-image">
+                <div class="panel-overlay">
+                    <div class="panel-subtitle">Shop</div>
+                    <div class="panel-title">Articles</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Drap Concept Store</h3>
+                <p>Your destination for premium fashion and lifestyle products. We curate the best collections to help you express your unique style.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Articles</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>📍 123 Fashion Street, Style City</li>
+                    <li>📞 (555) 123-4567</li>
+                    <li>✉️ info@drapconcept.com</li>
+                    <li>🕒 Mon-Fri: 9AM-8PM</li>
+                    <li>🕒 Sat-Sun: 10AM-6PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Drap Concept Store. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth hover effects
+        document.querySelectorAll('.category-panel').forEach(panel => {
+            panel.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            panel.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}`);
+                    this.value = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
